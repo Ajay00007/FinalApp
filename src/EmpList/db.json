@@ -1,0 +1,18 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "name": "Ajay",
+      "gender": "M",
+      "salary": "300000",
+      "department": "staff"
+    },
+    {
+      "name": "vijay",
+      "gender": "M",
+      "salary": "61654",
+      "department": "staff",
+      "id": 2
+    }
+  ]
+}
