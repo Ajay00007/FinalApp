@@ -19,3 +19,11 @@
 
 * Run API
   json-server --watch src/Data/db.json --port 8000
+
+
+
+if you face any error while running API server try below commands
+
+Get-ExecutionPolicy -List
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+Set-ExecutionPolicy RemoteSigned -Scope LocalMachine
