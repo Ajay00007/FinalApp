@@ -39,7 +39,7 @@ const Updateuser = () => {
     }, [userobj])
 
     return (
-        <div className="form">
+        <div className="form-1">
             <form onSubmit={handlesubmit}>
                 <div className="card">
                     <div className="card-header" style={{ textAlign: 'left' }}>

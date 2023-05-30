@@ -22,7 +22,7 @@ const Adduser = () => {
     }
 
     return (
-        <div className="form">
+        <div className="form-1">
             <form onSubmit={handlesubmit}>
                 <div className="card">
                     <div className="card-header" style={{ textAlign: 'left' }}>
@@ -32,8 +32,8 @@ const Adduser = () => {
                         <div className="row">
                             <div className="col-lg-8">
                                 <div className="form-group">
-                                    <label>Name</label>
-                                    <input value={name} onChange={e => namechange(e.target.value)} className="form-control"></input>
+                                    {/* <label>Name</label> */}
+                                    Name<input value={name} onChange={e => namechange(e.target.value)} className="form-control"></input>
                                 </div>
                             </div>
                             <div className="col-lg-8">

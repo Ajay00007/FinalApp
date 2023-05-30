@@ -1,9 +1,11 @@
-div.form{
-    margin-left: 36%;
-    border: 3px solid black;
+.form-1{
+    position: relative;
+    z-index: 1;
+    margin-top: 140px;
+    max-width: 360px;
+    margin-left: 35%;
     padding: 0px;
-    
-    border-radius: 10px;
-    margin-top: 10px;
+    text-align: center;
+    border:2px solid black;
 
 }
