@@ -7,13 +7,13 @@ import './Home.css';
 const Home = () => {
 
   const nav = useNavigate();
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
-  };
+  // const handleUsernameChange = (event) => {
+  //   setUsername(event.target.value);
+  // };
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
@@ -23,7 +23,7 @@ const Home = () => {
     event.preventDefault();
 
     // Perform validation
-    if (username === '') {
+    if (email === '') {
       alert('Please enter your username.');
     } else if (password === '') {
       alert('Please enter your password.');
@@ -42,12 +42,16 @@ const Home = () => {
       <form className='login-form' onSubmit={handleSubmit}>
         <div>
           {/* <label>Username:</label> */}
-          <input
+          {/* <input
             type="text"
             placeholder='Enter User Name'
             value={username}
             onChange={handleUsernameChange}
-          />
+          /> */}
+          <input type="email" placeholder="example@gmail.com" value={email}
+                        onChange={e => {
+                            setEmail(e.target.value)
+                         }} />
         </div>
         <br/>
         <div>
