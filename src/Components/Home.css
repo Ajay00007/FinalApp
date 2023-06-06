@@ -34,9 +34,9 @@
   text-transform: uppercase;
   outline: 0;
   background: radial-gradient(circle at 12.3% 19.3%, rgb(85, 88, 218) 0%, rgb(95, 209, 249) 100.2%);
-  width: 100%;
+  width: 94%;
   border: 0;
-  padding: 15px;
+  padding: 10px;
   color: #FFFFFF;
   font-size: 14px;
   -webkit-transition: all 0.3 ease;
@@ -52,11 +52,14 @@
   color: #b3b3b3;
   font-size: 12px;
 }
-h1{
+h3{
   padding-bottom: 20px;
   font-style: "Roboto", sans-serif;
 }
-
+p.message{
+  color: white;
+  font-weight: bold;
+}
 
 body{
     background-image: url("https://capovelo.com/wp-content/uploads/2016/06/taku-bannai-illustrations_urbancycling_4.jpg");
