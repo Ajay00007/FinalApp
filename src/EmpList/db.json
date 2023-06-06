@@ -3,13 +3,15 @@
     {
       "id": 1,
       "name": "Ajay",
-      "gender": "M",
+      "sex": "M",
+      "dob":"20/5/2000",
       "salary": "300000",
       "department": "staff"
     },
     {
       "name": "vijay",
-      "gender": "M",
+      "sex": "M",
+      "dob":"20/5/2000",
       "salary": "61654",
       "department": "staff",
       "id": 2

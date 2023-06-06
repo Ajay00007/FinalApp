@@ -7,7 +7,8 @@ import './edit.css';
 const Updateuser = () => {
     const [id, idchange] = useState(0);
     const [name, namechange] = useState('');
-    const [gender, genderchange] = useState('');
+    const [sex, sexchange] = useState('');
+    const [dob, dobchange] = useState('');
     const [salary, salarychange] = useState('');
     const [department, departmentchange] = useState('staff');
     const dispatch = useDispatch();
@@ -19,7 +20,7 @@ const Updateuser = () => {
 
     const handlesubmit = (e) => {
         e.preventDefault();
-        const userobj = { id, name, gender, salary, department };
+        const userobj = { id, name, sex, salary, department };
         dispatch(FunctionUpdateUser(userobj,id));
         navigate('/user');
     }
@@ -32,7 +33,8 @@ const Updateuser = () => {
         if(userobj){
             idchange(userobj.id);
             namechange(userobj.name);
-            genderchange(userobj.gender);
+            sexchange(userobj.sex);
+            sexchange(userobj.dob);
             salarychange(userobj.salary);
             departmentchange(userobj.department);
         }
@@ -61,8 +63,14 @@ const Updateuser = () => {
                             </div>
                             <div className="col-lg-8">
                                 <div className="form-group">
-                                    <label>gender</label>
-                                    <input value={gender || ''} onChange={e => genderchange(e.target.value)} className="form-control"></input>
+                                    <label>sex</label>
+                                    <input value={sex || ''} onChange={e => sexchange(e.target.value)} className="form-control"></input>
+                                </div>
+                            </div>
+                            <div className="col-lg-8">
+                                <div className="form-group">
+                                    <label>dob</label>
+                                    <input value={dob || ''} onChange={e => dobchange(e.target.value)} className="form-control"></input>
                                 </div>
                             </div>
                             <div className="col-lg-8">

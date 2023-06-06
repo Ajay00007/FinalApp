@@ -30,7 +30,8 @@ const Userlisting = (props) => {
                                     <tr>
                                         <td>ID</td>
                                         <td>Name</td>
-                                        <td>gender</td>
+                                        <td>sex</td>
+                                        <td>dob</td>
                                         <td>salary</td>
                                         <td>department</td>
                                         <td>Action</td>
@@ -42,7 +43,8 @@ const Userlisting = (props) => {
                                             <tr key={item.id}>
                                                 <td>{item.id}</td>
                                                 <td>{item.name}</td>
-                                                <td>{item.gender}</td>
+                                                <td>{item.sex}</td>
+                                                <td>{item.dob}</td>
                                                 <td>{item.salary}</td>
                                                 <td>{item.department}</td>
                                                 <td>

@@ -7,6 +7,7 @@ import Userlisting from './Components/emplist';
 import { ToastContainer } from 'react-toastify';
 import { Provider } from 'react-redux';
 import Store from './Redux/store';
+import Reg from './Components/signup';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         </div>
         <Routes>
           <Route path='/' element={<Home></Home>}></Route>
+          <Route path='/signup' element={<Reg></Reg>}></Route>
           <Route path='/user' element={<Userlisting></Userlisting>}></Route>
           <Route path='/user/add' element={<Adduser></Adduser>}></Route>
           <Route path='/user/edit/:code' element={<Updateuser></Updateuser>}></Route>

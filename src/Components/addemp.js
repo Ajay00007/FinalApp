@@ -7,7 +7,8 @@ import './edit.css';
 
 const Adduser = () => {
     const [name, namechange] = useState('');
-    const [gender, genderchange] = useState('');
+    const [sex, sexchange] = useState('');
+    const [dob, dobchange] = useState('');
     const [salary, salarychange] = useState('');
     const [department, departmentchange] = useState('staff');
     const dispatch=useDispatch();
@@ -16,13 +17,13 @@ const Adduser = () => {
     
     const handlesubmit = (e) => {
         e.preventDefault();
-        const userobj = { name, gender, salary, department };
+        const userobj = { name, sex, salary, department };
         dispatch(FunctionAddUser(userobj));
         navigate('/user');
     }
 
     return (
-        <div className="form-1">
+        <div className="form">
             <form onSubmit={handlesubmit}>
                 <div className="card">
                     <div className="card-header" style={{ textAlign: 'left' }}>
@@ -32,14 +33,20 @@ const Adduser = () => {
                         <div className="row">
                             <div className="col-lg-8">
                                 <div className="form-group">
-                                    {/* <label>Name</label> */}
-                                    Name<input value={name} onChange={e => namechange(e.target.value)} className="form-control"></input>
+                                    <label>Name</label>
+                                    <input value={name} onChange={e => namechange(e.target.value)} className="form-control"></input>
                                 </div>
                             </div>
                             <div className="col-lg-8">
                                 <div className="form-group">
-                                    <label>Gender</label>
-                                    <input value={gender} onChange={e => genderchange(e.target.value)} className="form-control"></input>
+                                    <label>sex</label>
+                                    <input value={sex} onChange={e => sexchange(e.target.value)} className="form-control"></input>
+                                </div>
+                            </div>
+                            <div className="col-lg-8">
+                                <div className="form-group">
+                                    <label>dob</label>
+                                    <input value={dob} onChange={e => dobchange(e.target.value)} className="form-control"></input>
                                 </div>
                             </div>
                             <div className="col-lg-8">
