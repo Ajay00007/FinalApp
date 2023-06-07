@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import axios from 'axios';
 
 import { useNavigate } from 'react-router';
 import './Home.css';
@@ -10,19 +10,24 @@ const Home = () => {
   const nav = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  // const [error, setError] = useState('');
 
-  const submitHandle = (event) => {
+  const submitHandle = async (event) => {
     event.preventDefault();
 
+    const res = await axios.get(
+      `http://localhost:8080/login/${email}/${password}`
+    );
+
     // Perform validation
-    if (email === '') {
+    if (res.email === '') {
       alert('Please enter your username.');
-    } else if (password === '') {
+    } else if (res.password === '') {
       alert('Please enter your password.');
     } else {
       // Perform login logic here
-      setError('');
+      // setError('');
+    
       alert('Login successful!');
       nav("/user")
     }

@@ -48,7 +48,7 @@ export const FetchUserList=()=>{
     return (dispatch)=>{
       dispatch(makeRequest());
       //setTimeout(() => {
-        axios.get('http://localhost:8000/user').then(res=>{
+        axios.get('http://localhost:8080/emplist').then(res=>{
             const userlist=res.data;
             dispatch(geUserList(userlist));
           }).catch(err=>{
@@ -59,11 +59,11 @@ export const FetchUserList=()=>{
     }
 }
 
-export const Removeuser=(code)=>{
+export const Removeuser=(id)=>{
     return (dispatch)=>{
       dispatch(makeRequest());
       //setTimeout(() => {
-        axios.delete('http://localhost:8000/user/'+code).then(res=>{
+        axios.delete('http://localhost:8080/delemp/'+id).then(res=>{
             dispatch(deleteUser());
           }).catch(err=>{
             dispatch(failRequest(err.message))
@@ -77,7 +77,7 @@ export const FunctionAddUser=(data)=>{
     return (dispatch)=>{
       dispatch(makeRequest());
       //setTimeout(() => {
-        axios.post('http://localhost:8000/user',data).then(res=>{
+        axios.post('http://localhost:8080/addemp',data).then(res=>{
             dispatch(addUser());
             toast.success('User Added successfully.')
           }).catch(err=>{
@@ -88,11 +88,11 @@ export const FunctionAddUser=(data)=>{
     }
 }
 
-export const FunctionUpdateUser=(data,code)=>{
+export const FunctionUpdateUser=(data,id)=>{
     return (dispatch)=>{
       dispatch(makeRequest());
       //setTimeout(() => {
-        axios.put('http://localhost:8000/user/'+code,data).then(res=>{
+        axios.put('http://localhost:8080/editemp/'+id,data).then(res=>{
             dispatch(updateUser());
             toast.success('User Updated successfully.')
           }).catch(err=>{
@@ -102,11 +102,11 @@ export const FunctionUpdateUser=(data,code)=>{
      
     }
 }
-export const FetchUserObj=(code)=>{
+export const FetchUserObj=(id)=>{
     return (dispatch)=>{
       dispatch(makeRequest());
       //setTimeout(() => {
-        axios.get('http://localhost:8000/user/'+code).then(res=>{
+        axios.get('http://localhost:8080/emp/'+id).then(res=>{
             const userlist=res.data;
             dispatch(getUserObj(userlist));
           }).catch(err=>{
