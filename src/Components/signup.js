@@ -32,12 +32,13 @@ const Reg = () => {
     <div className='form'>
       <form className='login-form'>
         <h3>Register</h3>
-
-        <input type="text" placeholder="Enter ur name" value={name}
+        {/* <label className="lable">User Name :</label> */}
+        User Name : <input type="text" placeholder="Enter your name" value={name}
                         onChange={e => {
                             setName(e.target.value)
 
                         }} />
+<label className="lable">Email :</label>
           <input type="email" placeholder="example@gmail.com" value={email}
                         onChange={e => {
                             setEmail(e.target.value)
@@ -49,7 +50,7 @@ const Reg = () => {
                               e.target.style.border = "2px solid green"
                                }
                          }} />
-       
+       <label className="lable">Password :</label>
         
           <input type="password" placeholder="Length is more than 5" onChange={e => {
                         setPassword(e.target.value)

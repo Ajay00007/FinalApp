@@ -45,7 +45,7 @@ const Updateuser = () => {
             <form onSubmit={handlesubmit}>
                 <div className="card">
                     <div className="card-header" style={{ textAlign: 'left' }}>
-                        <h2>Edit User</h2>
+                        <h2>Edit Employee</h2>
                     </div>
                     <div className="card-body" style={{ textAlign: 'left' }}>
                         <div className="row">
@@ -66,18 +66,18 @@ const Updateuser = () => {
                       <label>Sex: </label>
                       <input
                         required
-                        value="M"
+                        value={"M" || ''}
                         type="radio"
-                        onChange={(e) => sexchange(e.target.value)}
+                        onChange={e => sexchange(e.target.value)}
                         name="gender"
                         className="radio-btn"
                       />
                       Male 
                       <input
                         required
-                        value="F"
+                        value={"F" || ''}
                         type="radio"
-                        onChange={(e) => sexchange(e.target.value)}
+                        onChange={e => sexchange(e.target.value)}
                         name="gender"
                         className="radio-btn"
                       />
@@ -90,15 +90,15 @@ const Updateuser = () => {
                       <input
                         type="date"
                         required
-                        value={dob}
-                        onChange={(e) => dobchange(e.target.value)}
+                        value={dob || ''}
+                        onChange={e => dobchange(e.target.value)}
                         className="form-control"
                       ></input>
                     </div>
                 </div>  
                             <div className="col-lg-8">
                                 <div className="form-group">
-                                    <label>salary</label>
+                                    <label>Salary</label>
                                     <input value={salary || ''} onChange={e => salarychange(e.target.value)} className="form-control"></input>
                                 </div>
                             </div>
@@ -106,9 +106,9 @@ const Updateuser = () => {
                                 <div className="form-group">
                                     <label>department</label>
                                     <select value={department || ''} onChange={e => departmentchange(e.target.value)} className="form-control">
-                                        <option value="sales">Sales</option>
-                                        <option value="hr">HR</option>
-                                        <option value="accounts">Accounts</option>
+                                        <option value="Sales">Sales</option>
+                                        <option value="HR">HR</option>
+                                        <option value="Accounts">Accounts</option>
                                     </select>
                                 </div>
                             </div>

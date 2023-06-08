@@ -12,7 +12,7 @@ const Userlisting = (props) => {
         if (window.confirm('Do you want to remove?')) {
              props.removeuser(code);
              props.loaduser();
-             toast.success('User removed successfully.')
+             toast.success('Employee removed successfully.')
         }
     }
     return (
@@ -22,7 +22,7 @@ const Userlisting = (props) => {
                 <div>
                     <div className="card-1">
                         <div className="card-header" >
-                            <Link to={'/user/add'} className="btn btn-success">Add User</Link>
+                            <Link to={'/user/add'} className="btn btn-success" style={{marginBottom: "10px",marginRight:"10px"}}>Add Employee</Link>
                         </div>
                         <div className="card-body">
                             <table className="table table-bordered">

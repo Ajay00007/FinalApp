@@ -25,16 +25,16 @@ const Adduser = () => {
     return (
         <div className="form-1">
             <form onSubmit={handlesubmit}>
-                <div className="card">
+                <div className="card" style={{border:"2px solid black"}}>
                     <div className="card-header" style={{ textAlign: 'left' }}>
-                        <h2>Add User</h2>
+                        <h2>Add Employee</h2>
                     </div>
                     <div className="card-body" style={{ textAlign: 'left' }}>
                         <div className="row">
-                            <div className="col-lg-8">
-                                <div className="form-group">
+                            <div className="col-lg-8" >
+                                <div className="form-group" >
                                     <label>Name</label>
-                                    <input value={name} onChange={e => namechange(e.target.value)} className="form-control"></input>
+                                    <input value={name} onChange={e => namechange(e.target.value)} className="form-control" ></input>
                                 </div>
                             </div>
                             
@@ -45,7 +45,7 @@ const Adduser = () => {
                         required
                         value="M"
                         type="radio"
-                        onChange={(e) => sexchange(e.target.value)}
+                        onChange={e => sexchange(e.target.value)}
                         name="gender"
                         className="radio-btn"
                       />
@@ -54,7 +54,7 @@ const Adduser = () => {
                         required
                         value="F"
                         type="radio"
-                        onChange={(e) => sexchange(e.target.value)}
+                        onChange={e => sexchange(e.target.value)}
                         name="gender"
                         className="radio-btn"
                       />
@@ -69,24 +69,24 @@ const Adduser = () => {
                         type="date"
                         required
                         value={dob}
-                        onChange={(e) => dobchange(e.target.value)}
+                        onChange={e => dobchange(e.target.value)}
                         className="form-control"
                       ></input>
                     </div>
                 </div>
                             <div className="col-lg-8">
                                 <div className="form-group">
-                                    <label>salary</label>
+                                    <label>Salary</label>
                                     <input value={salary} onChange={e => salarychange(e.target.value)} className="form-control"></input>
                                 </div>
                             </div>
                             <div className="col-lg-8">
                                 <div className="form-group">
-                                    <label>department</label>
+                                    <label>Department</label>
                                     <select value={department} onChange={e => departmentchange(e.target.value)} className="form-control">
-                                        <option value="sales">Sales</option>
+                                        <option value="Sales">Sales</option>
                                         <option value="HR">HR</option>
-                                        <option value="accounts">Accounts</option>
+                                        <option value="Accounts">Accounts</option>
                                     </select>
                                 </div>
                             </div>

@@ -14,16 +14,24 @@ function App() {
     <Provider store={Store}>
     <div className="App">
       <BrowserRouter>
-        {/* <div className='header'>
-          <Link to={'/'}>Home</Link>
+      {/* <nav class="navbar navbar-expand-lg navbar-light" style={{backgroundColor:"Teal",fontFamily:"serif"}}>
+  <a class="navbar-brand" href="/">HOME</a>
+  <a class="navbar-brand" href="/user">EMPLOYEE</a>
+  <a class="navbar-brand" href="/user/add">ADD</a>
+  <a class="navbar-brand" href="/user/edit/:code">EDIT</a>
+  </nav> */}
+        {/* <div className='header'> */}
+        <nav class="navbar navbar-expand-lg navbar-light" style={{backgroundColor:"Teal",fontFamily:"serif",fontSize:"25px"}}>
+          <Link to={'/'} style={{marginLeft:"100px"}}>Home</Link>
           &nbsp;
           <Link to={'/user'}>Employees</Link>
           &nbsp;
-          <Link to={'/user/add'}>Add</Link>
+          <Link to={'/user/add'}>AddEmployee</Link>
           &nbsp;
-          <Link to={'/user/edit/:code'}>Edit</Link>
+          <Link to={'/user/edit/:code'}>EditEmployee</Link>
           &nbsp;
-        </div> */}
+          </nav>
+        {/* </div> */}
         <Routes>
           <Route path='/' element={<Home></Home>}></Route>
           <Route path='/signup' element={<Reg></Reg>}></Route>
@@ -34,8 +42,10 @@ function App() {
       </BrowserRouter>
       <ToastContainer className="toast-position"
         position="bottom-right"></ToastContainer>
+        
     </div>
     </Provider>
+    
   );
 }
 

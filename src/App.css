@@ -51,4 +51,10 @@
       transform: rotate(360deg);
     }
   }
+  nav :link{
+    margin-right: 100px;
+  }
+  a :hover{
+    background-color: black;
+  }
   
