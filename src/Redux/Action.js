@@ -62,13 +62,16 @@ export const FetchUserList=()=>{
 export const Removeuser=(id)=>{
     return (dispatch)=>{
       dispatch(makeRequest());
-      //setTimeout(() => {
+      // setTimeout(() => {
+        if (window.confirm("Do you want to remove?")){
         axios.delete('http://localhost:8080/delemp/'+id).then(res=>{
             dispatch(deleteUser());
           }).catch(err=>{
             dispatch(failRequest(err.message))
           })
-     // }, 2000);
+          window.location.reload();
+        }
+    //  }, 2000);
      
     }
 }

@@ -14,7 +14,7 @@ function App() {
     <Provider store={Store}>
     <div className="App">
       <BrowserRouter>
-        <div className='header'>
+        {/* <div className='header'>
           <Link to={'/'}>Home</Link>
           &nbsp;
           <Link to={'/user'}>Employees</Link>
@@ -23,7 +23,7 @@ function App() {
           &nbsp;
           <Link to={'/user/edit/:code'}>Edit</Link>
           &nbsp;
-        </div>
+        </div> */}
         <Routes>
           <Route path='/' element={<Home></Home>}></Route>
           <Route path='/signup' element={<Reg></Reg>}></Route>

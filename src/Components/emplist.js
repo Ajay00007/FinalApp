@@ -8,21 +8,21 @@ const Userlisting = (props) => {
     useEffect(() => {
         props.loaduser();
     }, [])
-    const handledelete = (ID) => {
+    const handledelete = (code) => {
         if (window.confirm('Do you want to remove?')) {
-             props.removeuser(ID);
+             props.removeuser(code);
              props.loaduser();
              toast.success('User removed successfully.')
         }
     }
     return (
-        props.user.loading ? <div><h2>Loading...</h2></div> :
-            props.user.errmessage ? <div><h2>{props.user.errmessage}</h2></div> :
+        // props.user.loading ? <div><h2>Loading...</h2></div> :
+        //     props.user.errmessage ? <div><h2>{props.user.errmessage}</h2></div> :
 
                 <div>
-                    <div className="card">
+                    <div className="card-1">
                         <div className="card-header" >
-                            <Link to={'/user/add'} className="btn btn-success">Add User [+]</Link>
+                            <Link to={'/user/add'} className="btn btn-success">Add User</Link>
                         </div>
                         <div className="card-body">
                             <table className="table table-bordered">
@@ -73,7 +73,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         loaduser: () => dispatch(FetchUserList()),
-        removeuser:(ID)=>dispatch(Removeuser(ID))
+        removeuser:(code)=>dispatch(Removeuser(code))
     }
 }
 

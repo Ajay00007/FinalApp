@@ -34,6 +34,7 @@ const Home = () => {
   };
 
   return (
+    
   <div className="login-page">
     <div className='form'>
       <form className='login-form'>

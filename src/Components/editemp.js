@@ -10,7 +10,7 @@ const Updateuser = () => {
     const [sex, sexchange] = useState('');
     const [dob, dobchange] = useState('');
     const [salary, salarychange] = useState('');
-    const [department, departmentchange] = useState('staff');
+    const [department, departmentchange] = useState('');
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const { code } = useParams();
@@ -20,7 +20,7 @@ const Updateuser = () => {
 
     const handlesubmit = (e) => {
         e.preventDefault();
-        const userobj = { id, name, sex, salary, department };
+        const userobj = { id, name, sex, dob, salary, department };
         dispatch(FunctionUpdateUser(userobj,id));
         navigate('/user');
     }
@@ -45,7 +45,7 @@ const Updateuser = () => {
             <form onSubmit={handlesubmit}>
                 <div className="card">
                     <div className="card-header" style={{ textAlign: 'left' }}>
-                        <h2>Add User</h2>
+                        <h2>Edit User</h2>
                     </div>
                     <div className="card-body" style={{ textAlign: 'left' }}>
                         <div className="row">
@@ -61,18 +61,41 @@ const Updateuser = () => {
                                     <input value={name || ''} onChange={e => namechange(e.target.value)} className="form-control"></input>
                                 </div>
                             </div>
-                            <div className="col-lg-8">
-                                <div className="form-group">
-                                    <label>sex</label>
-                                    <input value={sex || ''} onChange={e => sexchange(e.target.value)} className="form-control"></input>
-                                </div>
-                            </div>
-                            <div className="col-lg-8">
-                                <div className="form-group">
-                                    <label>dob</label>
-                                    <input value={dob || ''} onChange={e => dobchange(e.target.value)} className="form-control"></input>
-                                </div>
-                            </div>
+                            <div className="col-lg-12">
+                    <div className="form-group radio-div">
+                      <label>Sex: </label>
+                      <input
+                        required
+                        value="M"
+                        type="radio"
+                        onChange={(e) => sexchange(e.target.value)}
+                        name="gender"
+                        className="radio-btn"
+                      />
+                      Male 
+                      <input
+                        required
+                        value="F"
+                        type="radio"
+                        onChange={(e) => sexchange(e.target.value)}
+                        name="gender"
+                        className="radio-btn"
+                      />
+                      Female
+                    </div>
+                  </div>
+                  <div className="col-lg-8">
+                    <div className="form-group">
+                      <label>DOB</label>
+                      <input
+                        type="date"
+                        required
+                        value={dob}
+                        onChange={(e) => dobchange(e.target.value)}
+                        className="form-control"
+                      ></input>
+                    </div>
+                </div>  
                             <div className="col-lg-8">
                                 <div className="form-group">
                                     <label>salary</label>

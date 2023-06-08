@@ -14,7 +14,7 @@
   padding: 45px;
   text-align: center;
   border:1px solid gray;
-  border-radius: 30px
+  border-radius: 20px
   /* box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24); */
 }
 .form input {
@@ -62,6 +62,6 @@ p.message{
 }
 
 body{
-    background-image: url("https://capovelo.com/wp-content/uploads/2016/06/taku-bannai-illustrations_urbancycling_4.jpg");
+    background-image: url("https://th.bing.com/th/id/OIP.jtv5Xn6BGvrWnTuuoKLh-wHaHa?pid=ImgDet&rs=1");
     background-size: cover;
 }
