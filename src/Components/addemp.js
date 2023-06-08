@@ -25,7 +25,7 @@ const Adduser = () => {
     return (
         <div className="form-1">
             <form onSubmit={handlesubmit}>
-                <div className="card" style={{border:"2px solid black"}}>
+                <div className="card" >
                     <div className="card-header" style={{ textAlign: 'left' }}>
                         <h2>Add Employee</h2>
                     </div>
