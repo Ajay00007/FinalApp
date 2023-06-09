@@ -8,9 +8,17 @@ import './Home.css';
 const Home = () => {
 
   const nav = useNavigate();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, emailchange] = useState('');
+  const [password, passwordchange] = useState('');
   // const [error, setError] = useState('');
+
+  const emailChange = (e) => {
+    emailchange(e.target.value);
+  };
+
+  const passwordChange = (e) => {
+    passwordchange(e.target.value);
+  };
 
   const submitHandle = async (event) => {
     event.preventDefault();
@@ -20,9 +28,9 @@ const Home = () => {
     );
 
     // Perform validation
-    if (res.email === '') {
+    if (res.data === "wrong mail") {
       alert('Please enter your username.');
-    } else if (res.password === '') {
+    } else if (res.data === "wrong pass") {
       alert('Please enter your password.');
     } else {
       // Perform login logic here
@@ -38,9 +46,9 @@ const Home = () => {
   <div className="login-page">
     
     <div className='form'>
-      <form className='login-form'>
+      <form className='login-form' onSubmit={submitHandle} >
         <h3>Login</h3>
-          <input type="email" placeholder="example@gmail.com" value={email}
+          {/* <input type="email" placeholder="Example@gmail.com" value={email}
                         onChange={e => {
                             setEmail(e.target.value)
                             if (e.target.value === '' || !e.target.value.includes('@gmail.com')) {
@@ -51,9 +59,8 @@ const Home = () => {
                               e.target.style.border = "2px solid green"
                                }
                          }} />
-       
-        
-          <input type="password" placeholder="Length is more than 5" onChange={e => {
+
+          <input type="password" placeholder=" Enter Password " onChange={e => {
                         setPassword(e.target.value)
 
                         if (e.target.value === '' || e.target.value.length < 6) {
@@ -64,13 +71,28 @@ const Home = () => {
                             e.target.style.border = "2px solid green"
                         }
 
-                    }} />
+                    }} /> */}
+                    <div>
+          {/* <label className="label">Email </label> */}
+          <input type="email" required onChange={emailChange} placeholder='Enter your Name'></input>
+        </div>
+        <div>
+          {/* <label className="label" required>
+            Password
+          </label> */}
+          <input type="password" required onChange={passwordChange} placeholder='Enter your password'></input>
+        </div>
                     <div className="">
 
-{email === '' || password === '' ?
-    <button className="input-submit" disabled style={{ cursor: "not-allowed" }}>Login</button>
-    :
-    <button className="input-submit" onClick={submitHandle}>Login</button>}
+{/* {email === '' || password === '' ?
+    <button className="input-submit" disabled style={{ cursor: "not-allowed" }}>Login</button> */}
+    {/* :
+    // <button className="input-submit" onClick={submitHandle}>Login</button> */}
+    <div>
+          <button type="submit" className="btn btn-primary">
+            Login
+          </button>
+        </div>
 </div>
     <p className="message"style={{ color: "White" }}>Not registered? <Link to="/signup" style={{ color: "White",fontWeight: "bold" }}>Sign Up</Link></p>
       </form>

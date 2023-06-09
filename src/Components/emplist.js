@@ -21,8 +21,8 @@ const Userlisting = (props) => {
         navigate("/");
       };
     return (
-        props.user.loading ? <div><h2>Loading...</h2></div> :
-            props.user.errmessage ? <div><h2>{props.user.errmessage}</h2></div> :
+        // props.user.loading ? <div><h2>Loading...</h2></div> :
+        //     props.user.errmessage ? <div><h2>{props.user.errmessage}</h2></div> :
 
                 <div>
                     <div className="card-1">
@@ -64,7 +64,7 @@ const Userlisting = (props) => {
 
                             </table>
                             <div>
-              <button className="btn btn-primary" onClick={logOut} style={{marginLeft:"70%"}}>
+              <button className="btn btn-primary" onClick={logOut} >
                 Logout
               </button>
             </div>
