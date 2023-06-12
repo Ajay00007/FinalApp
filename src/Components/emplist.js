@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { FetchUserList,Removeuser} from "../Redux/Action";
-import { useNavigate } from "react-router-dom";
+
 
 const Userlisting = (props) => {
     useEffect(() => {
@@ -16,10 +16,8 @@ const Userlisting = (props) => {
              toast.success('Employee removed successfully.')
         }
     }
-    const navigate = useNavigate();
-    const logOut = () => {
-        navigate("/");
-      };
+    
+    
     return (
         // props.user.loading ? <div><h2>Loading...</h2></div> :
         //     props.user.errmessage ? <div><h2>{props.user.errmessage}</h2></div> :
@@ -64,9 +62,7 @@ const Userlisting = (props) => {
 
                             </table>
                             <div>
-              <button className="btn btn-primary" onClick={logOut} >
-                Logout
-              </button>
+             
             </div>
                         </div>
 

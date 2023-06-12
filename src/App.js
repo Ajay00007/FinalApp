@@ -28,7 +28,7 @@ function App() {
           &nbsp;
           <Link to={'/user/add'}>AddEmployee</Link>
           &nbsp;
-          <Link to={'/user/edit/:code'}>EditEmployee</Link>
+          <Link to={'/'}>Logout</Link>
           &nbsp;
           </nav>
         {/* </div> */}

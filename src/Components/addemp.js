@@ -34,7 +34,10 @@ const Adduser = () => {
                             <div className="col-lg-8" >
                                 <div className="form-group" >
                                     <label>Name</label>
-                                    <input value={name} onChange={e => namechange(e.target.value)} className="form-control" ></input>
+                                    <input value={name} 
+                                    onChange={e => namechange(e.target.value)} 
+                                    className="form-control" 
+                                    required></input>
                                 </div>
                             </div>
                             
@@ -77,13 +80,22 @@ const Adduser = () => {
                             <div className="col-lg-8">
                                 <div className="form-group">
                                     <label>Salary</label>
-                                    <input value={salary} onChange={e => salarychange(e.target.value)} className="form-control"></input>
+                                    <input 
+                                    value={salary} 
+                                    onChange={e => salarychange(e.target.value)} 
+                                    className="form-control"
+                                    required></input>
                                 </div>
                             </div>
                             <div className="col-lg-8">
                                 <div className="form-group">
                                     <label>Department</label>
-                                    <select value={department} onChange={e => departmentchange(e.target.value)} className="form-control">
+                                    <select 
+                                    value={department}
+                                    onChange={e => departmentchange(e.target.value)}
+                                    className="form-control"
+                                    required
+                                    >
                                         <option value="Sales">Sales</option>
                                         <option value="HR">HR</option>
                                         <option value="Accounts">Accounts</option>

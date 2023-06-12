@@ -52,13 +52,20 @@ const Updateuser = () => {
                             <div className="col-sm-8">
                                 <div className="form-group">
                                     <label>Id</label>
-                                    <input value={id || ''} disabled="disabled" className="form-control"></input>
+                                    <input value={id || ''}
+                                     disabled="disabled" 
+                                     className="form-control">
+                                     </input>
                                 </div>
                             </div>
                             <div className="col-lg-8">
                                 <div className="form-group">
                                     <label>Name</label>
-                                    <input value={name || ''} onChange={e => namechange(e.target.value)} className="form-control"></input>
+                                    <input value={name || ''}
+                                    onChange={e => namechange(e.target.value)} 
+                                    className="form-control"
+                                    required>
+                                    </input>
                                 </div>
                             </div>
                             <div className="col-lg-12">
@@ -99,13 +106,13 @@ const Updateuser = () => {
                             <div className="col-lg-8">
                                 <div className="form-group">
                                     <label>Salary</label>
-                                    <input value={salary || ''} onChange={e => salarychange(e.target.value)} className="form-control"></input>
+                                    <input required value={salary || ''} onChange={e => salarychange(e.target.value)} className="form-control"></input>
                                 </div>
                             </div>
                             <div className="col-lg-8">
                                 <div className="form-group">
                                     <label>department</label>
-                                    <select value={department || ''} onChange={e => departmentchange(e.target.value)} className="form-control">
+                                    <select required value={department || ''} onChange={e => departmentchange(e.target.value)} className="form-control">
                                         <option value="Sales">Sales</option>
                                         <option value="HR">HR</option>
                                         <option value="Accounts">Accounts</option>
