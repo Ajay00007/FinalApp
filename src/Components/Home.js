@@ -10,7 +10,7 @@ const Home = () => {
   const nav = useNavigate();
   const [email, emailchange] = useState('');
   const [password, passwordchange] = useState('');
-  // const [error, setError] = useState('');
+  const [error, setError] = useState('');
 
   const emailChange = (e) => {
     emailchange(e.target.value);
@@ -34,7 +34,7 @@ const Home = () => {
       alert('Please enter your password.');
     } else {
       // Perform login logic here
-      // setError('');
+      setError('');
     
       alert('Login successful!');
       nav("/user")
@@ -74,7 +74,7 @@ const Home = () => {
                     }} /> */}
                     <div>
           {/* <label className="label">Email </label> */}
-          <input type="email" required onChange={emailChange} placeholder='Enter your Name'></input>
+          <input type="email" required onChange={emailChange} placeholder='Enter your Email'></input>
         </div>
         <div>
           {/* <label className="label" required>
