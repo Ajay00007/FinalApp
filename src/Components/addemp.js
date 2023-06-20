@@ -24,6 +24,18 @@ const Adduser = () => {
 
     return (
         <div className="form-1">
+
+<nav class="navbar navbar-expand-lg navbar-light" style={{backgroundColor:"Teal",fontFamily:"serif",fontSize:"25px"}}>
+          <Link to={'/'} style={{marginLeft:"100px"}}>Home</Link>
+          &nbsp;
+          <Link to={'/user'}>Employees</Link>
+          &nbsp;
+          <Link to={'/user/add'}>AddEmployee</Link>
+          &nbsp;
+          <Link to={'/'}>Logout</Link>
+          &nbsp;
+        </nav>
+
             <form onSubmit={handlesubmit}>
                 <div className="card" >
                     <div className="card-header" style={{ textAlign: 'left' }}>

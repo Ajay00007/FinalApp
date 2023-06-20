@@ -21,16 +21,16 @@ function App() {
   <a class="navbar-brand" href="/user/edit/:code">EDIT</a>
   </nav> */}
         {/* <div className='header'> */}
-        <nav class="navbar navbar-expand-lg navbar-light" style={{backgroundColor:"Teal",fontFamily:"serif",fontSize:"25px"}}>
+        {/* <nav class="navbar navbar-expand-lg navbar-light" style={{backgroundColor:"Teal",fontFamily:"serif",fontSize:"25px"}}>
           <Link to={'/'} style={{marginLeft:"100px"}}>Home</Link>
           &nbsp;
           <Link to={'/user'}>Employees</Link>
           &nbsp;
           <Link to={'/user/add'}>AddEmployee</Link>
           &nbsp;
-          <Link to={'/user/edit/:code'}>EditEmployee</Link>
+          <Link to={'/'}>Logout</Link>
           &nbsp;
-          </nav>
+          </nav> */}
         {/* </div> */}
         <Routes>
           <Route path='/' element={<Home></Home>}></Route>

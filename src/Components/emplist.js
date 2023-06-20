@@ -3,28 +3,39 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { FetchUserList,Removeuser} from "../Redux/Action";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const Userlisting = (props) => {
+
     useEffect(() => {
         props.loaduser();
     }, [])
+
     const handledelete = (code) => {
         if (window.confirm('Do you want to remove?')) {
              props.removeuser(code);
-             props.loaduser();
              toast.success('Employee removed successfully.')
+             props.loaduser();
+             
         }
-    }
-    const navigate = useNavigate();
-    const logOut = () => {
-        navigate("/");
-      };
+    };
+    
     return (
-        // props.user.loading ? <div><h2>Loading...</h2></div> :
-        //     props.user.errmessage ? <div><h2>{props.user.errmessage}</h2></div> :
+        props.user.loading ? <div><h2>Loading...</h2></div> :
+            props.user.errmessage ? <div><h2>{props.user.errmessage}</h2></div> :
 
                 <div>
+        <nav class="navbar navbar-expand-lg navbar-light" style={{backgroundColor:"Teal",fontFamily:"serif",fontSize:"25px"}}>
+          <Link to={'/'} style={{marginLeft:"100px"}}>Home</Link>
+          &nbsp;
+          <Link to={'/user'}>Employees</Link>
+          &nbsp;
+          <Link to={'/user/add'}>AddEmployee</Link>
+          &nbsp;
+          <Link to={'/'}>Logout</Link>
+          &nbsp;
+        </nav>
+
                     <div className="card-1">
                         <div className="card-header" >
                             <Link to={'/user/add'} className="btn btn-success" style={{marginBottom: "10px",marginRight:"140px"}}>Add Employee</Link>
@@ -44,9 +55,9 @@ const Userlisting = (props) => {
                                 </thead>
                                 <tbody>
                                     {
-                                        props.user.userlist && props.user.userlist.map(item =>
-                                            <tr key={item.id}>
-                                                <td>{item.id}</td>
+                                        props.user.userlist && props.user.userlist.map((item, index)=>
+                                            <tr key={index}>
+                                                <td>{index +1}</td>
                                                 <td>{item.name}</td>
                                                 <td>{item.sex}</td>
                                                 <td>{item.dob}</td>
@@ -63,11 +74,7 @@ const Userlisting = (props) => {
                                 </tbody>
 
                             </table>
-                            <div>
-              <button className="btn btn-primary" onClick={logOut} >
-                Logout
-              </button>
-            </div>
+                           
                         </div>
 
                     </div>

@@ -44,60 +44,26 @@ const Home = () => {
   return (
     
   <div className="login-page">
-    
     <div className='form'>
       <form className='login-form' onSubmit={submitHandle} >
         <h3>Login</h3>
-          {/* <input type="email" placeholder="Example@gmail.com" value={email}
-                        onChange={e => {
-                            setEmail(e.target.value)
-                            if (e.target.value === '' || !e.target.value.includes('@gmail.com')) {
-
-                              e.target.style.border = "2px solid red"
-                          }
-                          else {
-                              e.target.style.border = "2px solid green"
-                               }
-                         }} />
-
-          <input type="password" placeholder=" Enter Password " onChange={e => {
-                        setPassword(e.target.value)
-
-                        if (e.target.value === '' || e.target.value.length < 6) {
-
-                            e.target.style.border = "2px solid red"
-                        }
-                        else {
-                            e.target.style.border = "2px solid green"
-                        }
-
-                    }} /> */}
-                    <div>
-          {/* <label className="label">Email </label> */}
-          <input type="email" required onChange={emailChange} placeholder='Enter your Name'></input>
-        </div>
         <div>
-          {/* <label className="label" required>
-            Password
-          </label> */}
+          {/* <label className="label">Email </label> */}
+          <input type="email" required onChange={emailChange} placeholder='Enter your Email'></input>
+          </div>
+          <div>
+          {/* <label className="label" required> Password </label> */}
           <input type="password" required onChange={passwordChange} placeholder='Enter your password'></input>
-        </div>
-                    <div className="">
-
-{/* {email === '' || password === '' ?
-    <button className="input-submit" disabled style={{ cursor: "not-allowed" }}>Login</button> */}
-    {/* :
-    // <button className="input-submit" onClick={submitHandle}>Login</button> */}
-    <div>
-          <button type="submit" className="btn btn-primary">
-            Login
-          </button>
-        </div>
-</div>
-    <p className="message"style={{ color: "White" }}>Not registered? <Link to="/signup" style={{ color: "White",fontWeight: "bold" }}>Sign Up</Link></p>
-      </form>
-    </div>
-   </div>
+          </div>
+          <div className="">
+            <div>
+              <button type="submit" className="btn btn-primary"> Login </button>
+              </div>
+              </div>
+              <p className="message"style={{ color: "White" }}>Not registered? <Link to="/signup" style={{ color: "White",fontWeight: "bold" }}>Sign Up</Link></p>
+              </form>
+              </div>
+            </div>
    
   );
 };

@@ -14,6 +14,17 @@ const Reg = () => {
   const [password, setPassword] = useState('');
   // const [error, setError] = useState('');
 
+  const nameChange = (e) => {
+    setName(e.target.value);
+  };
+  const emailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const passwordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
   const submitHandle = async (event) => {
     event.preventDefault();
 
@@ -30,47 +41,30 @@ const Reg = () => {
   return (
   <div className="login-page">
     <div className='form'>
-      <form className='login-form'>
+      <form className='login-form' onSubmit={submitHandle}>
         <h3>Register</h3>
         {/* <label className="lable">User Name :</label> */}
-        <input type="text" placeholder="Enter your name" value={name}
-                        onChange={e => {
-                            setName(e.target.value)
-
-                        }} />
+        <div>
+          {/* <label className="label" required> Password </label> */}
+          <input type="text" required onChange={nameChange} placeholder='Enter your Name'></input>
+          </div>
 {/* <label className="lable">Email :</label> */}
-          <input type="email" placeholder="example@gmail.com" value={email}
-                        onChange={e => {
-                            setEmail(e.target.value)
-                            if (e.target.value === '' || !e.target.value.includes('@gmail.com')) {
-
-                              e.target.style.border = "2px solid red"
-                          }
-                          else {
-                              e.target.style.border = "2px solid green"
-                               }
-                         }} />
+<div>
+          {/* <label className="label">Email </label> */}
+          <input type="email" required onChange={emailChange} placeholder='Enter your Email'></input>
+          </div>
        {/* <label className="lable">Password :</label> */}
         
-          <input type="password" placeholder="Length is more than 5" onChange={e => {
-                        setPassword(e.target.value)
-
-                        if (e.target.value === '' || e.target.value.length < 6) {
-
-                            e.target.style.border = "2px solid red"
-                        }
-                        else {
-                            e.target.style.border = "2px solid green"
-                        }
-
-                    }} />
-                    <div className="">
-
-{email === '' || password === '' ?
-    <button className="input-submit" disabled style={{ cursor: "not-allowed" }}>register</button>
-    :
-    <button className="input-submit" onClick={submitHandle}>register</button>}
-</div>
+       <div>
+          {/* <label className="label" required> Password </label> */}
+          <input type="password" required onChange={passwordChange} placeholder='Enter your password'></input>
+          </div>
+          <div className="">
+            <div>
+              <button type="submit" className="btn btn-primary"> Register </button>
+              </div>
+              </div>
+                   
     <p className="message"style={{ color: "White" }}>Already registered? <Link to="/" style={{ color: "White",fontWeight: "bold" }}>Login</Link></p>
       </form>
     </div>
