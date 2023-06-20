@@ -22,6 +22,8 @@ const Adduser = () => {
         navigate('/user');
     }
 
+    
+
     return (
         <div className="form-1">
 
@@ -108,6 +110,7 @@ const Adduser = () => {
                                     className="form-control"
                                     required
                                     >
+                                        <option value="None"></option>
                                         <option value="Sales">Sales</option>
                                         <option value="HR">HR</option>
                                         <option value="Accounts">Accounts</option>

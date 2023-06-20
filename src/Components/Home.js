@@ -47,8 +47,7 @@ const Home = () => {
     <div className='form'>
       <form className='login-form' onSubmit={submitHandle} >
         <h3>Login</h3>
-<<<<<<< HEAD
-=======
+
           {/* <input type="email" placeholder="Example@gmail.com" value={email}
                         onChange={e => {
                             setEmail(e.target.value)
@@ -77,11 +76,8 @@ const Home = () => {
           {/* <label className="label">Email </label> */}
           <input type="email" required onChange={emailChange} placeholder='Enter your Email'></input>
         </div>
->>>>>>> ea388cb5026232e2984baef8884465dc81465c26
-        <div>
-          {/* <label className="label">Email </label> */}
-          <input type="email" required onChange={emailChange} placeholder='Enter your Email'></input>
-          </div>
+
+       
           <div>
           {/* <label className="label" required> Password </label> */}
           <input type="password" required onChange={passwordChange} placeholder='Enter your password'></input>

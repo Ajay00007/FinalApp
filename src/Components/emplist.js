@@ -3,31 +3,30 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { FetchUserList,Removeuser} from "../Redux/Action";
-<<<<<<< HEAD
-// import { useNavigate } from "react-router-dom";
-=======
 
->>>>>>> ea388cb5026232e2984baef8884465dc81465c26
+import { useNavigate } from "react-router-dom";
+
 
 const Userlisting = (props) => {
-
+const nav = useNavigate();
     useEffect(() => {
         props.loaduser();
     }, [])
 
-    const handledelete = (code) => {
+    const handledelete = (index) => {
         if (window.confirm('Do you want to remove?')) {
-             props.removeuser(code);
+             props.removeuser(index);
              toast.success('Employee removed successfully.')
-             props.loaduser();
-             
+             props.loaduser(); 
         }
-<<<<<<< HEAD
     };
-=======
-    }
-    
->>>>>>> ea388cb5026232e2984baef8884465dc81465c26
+
+    const logout = (e) => {
+        e.preventDefault();
+        if (window.confirm("Are you sure want to Logout?")) {
+          nav("/");
+        }
+      };
     
     return (
         props.user.loading ? <div><h2>Loading...</h2></div> :
@@ -41,7 +40,7 @@ const Userlisting = (props) => {
           &nbsp;
           <Link to={'/user/add'}>AddEmployee</Link>
           &nbsp;
-          <Link to={'/'}>Logout</Link>
+          <Link to={'/'} onClick={logout}>Logout</Link>
           &nbsp;
         </nav>
 
@@ -64,9 +63,9 @@ const Userlisting = (props) => {
                                 </thead>
                                 <tbody>
                                     {
-                                        props.user.userlist && props.user.userlist.map((item, index)=>
-                                            <tr key={index}>
-                                                <td>{index +1}</td>
+                                        props.user.userlist && props.user.userlist.map((item, id)=>
+                                            <tr key={id}>
+                                                <td>{id +1}</td>
                                                 <td>{item.name}</td>
                                                 <td>{item.sex}</td>
                                                 <td>{item.dob}</td>
@@ -83,13 +82,11 @@ const Userlisting = (props) => {
                                 </tbody>
 
                             </table>
-<<<<<<< HEAD
-                           
-=======
+
                             <div>
              
             </div>
->>>>>>> ea388cb5026232e2984baef8884465dc81465c26
+
                         </div>
 
                     </div>
@@ -105,7 +102,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         loaduser: () => dispatch(FetchUserList()),
-        removeuser:(code)=>dispatch(Removeuser(code))
+        removeuser:(code)=>dispatch(Removeuser(code)),
     }
 }
 
