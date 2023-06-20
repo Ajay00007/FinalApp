@@ -10,7 +10,7 @@ const Home = () => {
   const nav = useNavigate();
   const [email, emailchange] = useState('');
   const [password, passwordchange] = useState('');
-  // const [error, setError] = useState('');
+  const [error, setError] = useState('');
 
   const emailChange = (e) => {
     emailchange(e.target.value);
@@ -34,7 +34,7 @@ const Home = () => {
       alert('Please enter your password.');
     } else {
       // Perform login logic here
-      // setError('');
+      setError('');
     
       alert('Login successful!');
       nav("/user")
@@ -47,6 +47,37 @@ const Home = () => {
     <div className='form'>
       <form className='login-form' onSubmit={submitHandle} >
         <h3>Login</h3>
+<<<<<<< HEAD
+=======
+          {/* <input type="email" placeholder="Example@gmail.com" value={email}
+                        onChange={e => {
+                            setEmail(e.target.value)
+                            if (e.target.value === '' || !e.target.value.includes('@gmail.com')) {
+
+                              e.target.style.border = "2px solid red"
+                          }
+                          else {
+                              e.target.style.border = "2px solid green"
+                               }
+                         }} />
+
+          <input type="password" placeholder=" Enter Password " onChange={e => {
+                        setPassword(e.target.value)
+
+                        if (e.target.value === '' || e.target.value.length < 6) {
+
+                            e.target.style.border = "2px solid red"
+                        }
+                        else {
+                            e.target.style.border = "2px solid green"
+                        }
+
+                    }} /> */}
+                    <div>
+          {/* <label className="label">Email </label> */}
+          <input type="email" required onChange={emailChange} placeholder='Enter your Email'></input>
+        </div>
+>>>>>>> ea388cb5026232e2984baef8884465dc81465c26
         <div>
           {/* <label className="label">Email </label> */}
           <input type="email" required onChange={emailChange} placeholder='Enter your Email'></input>

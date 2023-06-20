@@ -3,7 +3,11 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { FetchUserList,Removeuser} from "../Redux/Action";
+<<<<<<< HEAD
 // import { useNavigate } from "react-router-dom";
+=======
+
+>>>>>>> ea388cb5026232e2984baef8884465dc81465c26
 
 const Userlisting = (props) => {
 
@@ -18,7 +22,12 @@ const Userlisting = (props) => {
              props.loaduser();
              
         }
+<<<<<<< HEAD
     };
+=======
+    }
+    
+>>>>>>> ea388cb5026232e2984baef8884465dc81465c26
     
     return (
         props.user.loading ? <div><h2>Loading...</h2></div> :
@@ -74,7 +83,13 @@ const Userlisting = (props) => {
                                 </tbody>
 
                             </table>
+<<<<<<< HEAD
                            
+=======
+                            <div>
+             
+            </div>
+>>>>>>> ea388cb5026232e2984baef8884465dc81465c26
                         </div>
 
                     </div>
