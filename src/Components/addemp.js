@@ -20,7 +20,15 @@ const Adduser = () => {
         const userobj = { name, sex, dob, salary, department };
         dispatch(FunctionAddUser(userobj));
         navigate('/user');
-    }
+    };
+
+    const logout = (e) => {
+        e.preventDefault();
+        if (window.confirm("Do you want to Logout?")) {
+          navigate("/");
+          
+        }
+      };
 
     
 
@@ -34,7 +42,7 @@ const Adduser = () => {
           &nbsp;
           <Link to={'/user/add'}>AddEmployee</Link>
           &nbsp;
-          <Link to={'/'}>Logout</Link>
+          <Link to={'/'} onClick={logout}>Logout</Link>
           &nbsp;
         </nav>
 
@@ -49,9 +57,10 @@ const Adduser = () => {
                                 <div className="form-group" >
                                     <label>Name</label>
                                     <input value={name} 
-                                    onChange={e => namechange(e.target.value)} 
+                                    onChange={(e) => namechange(e.target.value)} 
                                     className="form-control" 
-                                    required></input>
+                                    required
+                                    placeholder="Enter Employee Name"></input>
                                 </div>
                             </div>
                             
@@ -86,7 +95,7 @@ const Adduser = () => {
                         type="date"
                         required
                         value={dob}
-                        onChange={e => dobchange(e.target.value)}
+                        onChange={(e) => dobchange(e.target.value)}
                         className="form-control"
                       ></input>
                     </div>
@@ -96,7 +105,7 @@ const Adduser = () => {
                                     <label>Salary</label>
                                     <input 
                                     value={salary} 
-                                    onChange={e => salarychange(e.target.value)} 
+                                    onChange={(e) => salarychange(e.target.value)} 
                                     className="form-control"
                                     required></input>
                                 </div>
@@ -106,7 +115,7 @@ const Adduser = () => {
                                     <label>Department</label>
                                     <select 
                                     value={department}
-                                    onChange={e => departmentchange(e.target.value)}
+                                    onChange={e => departmentchange((e).target.value)}
                                     className="form-control"
                                     required
                                     >

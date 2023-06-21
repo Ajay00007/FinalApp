@@ -23,11 +23,11 @@ const Updateuser = () => {
         const userobj = { id, name, sex, dob, salary, department };
         dispatch(FunctionUpdateUser(userobj,id));
         navigate('/user');
-    }
+    };
 
     useEffect(() => {
         dispatch(FetchUserObj(code));
-    }, [])
+    }, [code,dispatch])
 
     useEffect(() => {
         if(userobj){
@@ -40,6 +40,20 @@ const Updateuser = () => {
         }
     }, [userobj])
 
+    const logout = (e) => {
+        e.preventDefault();
+        if (window.confirm("Do you want to Logout?")) {
+          navigate("/");
+        }
+      };
+
+      const isRadio = (val) => {
+        if (val == sex) {
+          return true;
+        }
+        return false;
+      };
+
     return (
         <div className="form-1">
 
@@ -50,7 +64,7 @@ const Updateuser = () => {
           &nbsp;
           <Link to={'/user/add'}>AddEmployee</Link>
           &nbsp;
-          <Link to={'/'}>Logout</Link>
+          <Link to={'/'} onClick={logout}>Logout</Link>
           &nbsp;
         </nav>
 
@@ -74,7 +88,7 @@ const Updateuser = () => {
                                 <div className="form-group">
                                     <label>Name</label>
                                     <input value={name || ''}
-                                    onChange={e => namechange(e.target.value)} 
+                                    onChange={(e) => namechange(e.target.value)} 
                                     className="form-control"
                                     required>
                                     </input>
@@ -85,20 +99,24 @@ const Updateuser = () => {
                       <label>Sex: </label>
                       <input
                         required
-                        value={"M" || ''}
+                        value="M"
+                        // checked={sex === "M"}
                         type="radio"
-                        onChange={e => sexchange(e.target.value)}
-                        name="gender"
+                        onChange={(e) => sexchange(e.target.value)}
+                        name="sex"
                         className="radio-btn"
+                        checked={isRadio("M")}
                       />
                       Male 
                       <input
                         required
-                        value={"F" || ''}
+                        value="F"
+                        // checked={sex === "F"}
                         type="radio"
-                        onChange={e => sexchange(e.target.value)}
-                        name="gender"
+                        onChange={(e) => sexchange(e.target.value)}
+                        name="sex"
                         className="radio-btn"
+                        checked={isRadio("F")}
                       />
                       Female
                     </div>
@@ -109,8 +127,8 @@ const Updateuser = () => {
                       <input
                         type="date"
                         required
-                        value={dob || ''}
-                        onChange={e => dobchange(e.target.value)}
+                        value={dob || ""}
+                        onChange={(e) => dobchange(e.target.value)}
                         className="form-control"
                       ></input>
                     </div>
@@ -118,13 +136,14 @@ const Updateuser = () => {
                             <div className="col-lg-8">
                                 <div className="form-group">
                                     <label>Salary</label>
-                                    <input required value={salary || ''} onChange={e => salarychange(e.target.value)} className="form-control"></input>
+                                    <input required value={salary || ''} onChange={(e) => salarychange(e.target.value)} className="form-control"></input>
                                 </div>
                             </div>
                             <div className="col-lg-8">
                                 <div className="form-group">
                                     <label>department</label>
-                                    <select required value={department || ''} onChange={e => departmentchange(e.target.value)} className="form-control">
+                                    <select required value={department || ''} onChange={(e) => departmentchange(e.target.value)} className="form-control">
+                                        <option value="None"></option>
                                         <option value="Sales">Sales</option>
                                         <option value="HR">HR</option>
                                         <option value="Accounts">Accounts</option>
