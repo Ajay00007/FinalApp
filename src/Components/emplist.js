@@ -27,7 +27,40 @@ const nav = useNavigate();
           nav("/");
         }
       };
-    
+      const renderUserImage = (item) => {
+        if (item.image && typeof item.image === 'string') {
+          const blobData = atob(item.image);
+          const arrayBuffer = new ArrayBuffer(blobData.length);
+          const uintArray = new Uint8Array(arrayBuffer);
+          for (let i = 0; i < blobData.length; i++) {
+            uintArray[i] = blobData.charCodeAt(i);
+          }
+          const blob = new Blob([arrayBuffer], { type: 'image/jpeg' });
+      
+          const base64String = URL.createObjectURL(blob);
+          return (
+            <img
+              src={base64String}
+              alt="User"
+              className="user-image"
+            //   alt="User" 
+              style={{height:60, width:60,borderRadius:"50%"}}
+            />
+          );
+        } else if (item.image && Array.isArray(item.image)) {
+          const base64String = btoa(String.fromCharCode.apply(null, item.image));
+          return (
+            <img
+              src={`data:image/jpeg;base64,${base64String}`}
+              alt="User"
+              className="user-image custom-image-style"
+              style={{height:60, width:60,borderRadius:"50%"}}
+            />
+          );
+        }
+        return null;
+      };
+      
     return (
         props.user.loading ? <div><h2>Loading...</h2></div> :
             props.user.errmessage ? <div><h2>{props.user.errmessage}</h2></div> :
@@ -53,6 +86,7 @@ const nav = useNavigate();
                                 <thead className="bg-dark text-white">
                                     <tr>
                                         <td>ID</td>
+                                        <td>Profile Photo</td>
                                         <td>Name</td>
                                         <td>Sex</td>
                                         <td>DOB</td>
@@ -66,11 +100,13 @@ const nav = useNavigate();
                                         props.user.userlist && props.user.userlist.map((item, id)=>
                                             <tr key={id}>
                                                 <td>{id +1}</td>
+                                                <td>{renderUserImage(item)}</td>
                                                 <td>{item.name}</td>
                                                 <td>{item.sex}</td>
                                                 <td>{item.dob}</td>
                                                 <td>{item.salary}</td>
                                                 <td>{item.department}</td>
+
                                                 <td>
                                                     <Link to={'/user/edit/' + item.id} className="btn btn-primary">Edit</Link> |
                                                     <button onClick={() => {handledelete(item.id)}} className="btn btn-danger">Delete</button>

@@ -11,13 +11,15 @@ const Adduser = () => {
     const [dob, dobchange] = useState('');
     const [salary, salarychange] = useState('');
     const [department, departmentchange] = useState('');
+    const [image, setImage] = useState("");
+
     const dispatch=useDispatch();
     const navigate=useNavigate();
 
     
     const handlesubmit = (e) => {
         e.preventDefault();
-        const userobj = { name, sex, dob, salary, department };
+        const userobj = { name, sex, dob, salary, department,image };
         dispatch(FunctionAddUser(userobj));
         navigate('/user');
     };
@@ -28,6 +30,38 @@ const Adduser = () => {
           navigate("/");
           
         }
+      };
+
+      const handleImageChange = (e) => {
+        const file = e.target.files[0];
+        const reader = new FileReader();
+      
+        reader.onload = (event) => {
+          const base64String = event.target.result.split(",")[1];
+          setImage(base64String);
+        };
+      
+        reader.onerror = (error) => {
+          console.log("Error: ", error);
+        };
+      
+        if (file) {
+          reader.readAsDataURL(file);
+        }
+      };  
+    
+      const renderUserImage = () => {
+        if (image) {
+          return (
+            <img
+              src={`data:image/jpeg;base64,${image}`}
+              alt="User"
+              className="user-image"
+              style={{height:60, width:60}}
+            />
+          );
+        }
+        return null;
       };
 
     
@@ -126,7 +160,20 @@ const Adduser = () => {
                                     </select>
                                 </div>
                             </div>
-
+                            <div className="col-lg-12">
+                  <div className="form-group">
+                    <label>Profile Photo</label>
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onChange={handleImageChange}
+                      className="form-control"
+                      required
+                    />
+                    {renderUserImage()}
+                    <small className="form-text text-muted">Choose a profile photo</small>
+                  </div>
+                </div>
                         </div>
                     </div>
                     <div className="card-footer" style={{ textAlign: 'left' }}>
